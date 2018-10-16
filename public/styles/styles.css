@@ -1,7 +1,25 @@
+.card {
+  margin: 0;
+  padding: 0;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
 
 #clickFA {
   cursor: pointer;
+}
+
+#remaining {
+  width: 100%;
+}
+
+#remaining {
+  list-style: none;
+  overflow: hidden;
+}
+
+li {
+  float: left;
 }

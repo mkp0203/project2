@@ -26,14 +26,14 @@
             </div>
         </header>
 
-        <div class="row">
-            <div class="card">
-                <div class="card-body">
+        <div class="row" id="goal">
+            <div class="card col-sm-12">
+                <div class="card-body pt-0">
                     <ul id="remaining">
-                        <li class="col-sm-3">Calories</li>
-                        <li class="col-sm-3">Protein</li>
-                        <li class="col-sm-3">Fat</li>
-                        <li class="col-sm-3">Carbs</li>
+                        <li class="col-sm-3">Calories: </li>
+                        <li class="col-sm-3">Protein: </li>
+                        <li class="col-sm-3">Fat: </li>
+                        <li class="col-sm-3">Carbs: </li>
                     </ul>
                 </div>
             </div>
@@ -42,7 +42,7 @@
         <div class="row">
             <div class="card col-sm-6">
                 <div class="card-header">User Input</div>
-                <div class="card-body">
+                <div class="card-body p-0">
                     <table id="myTable" class="table order-list">
                         <thead>
                             <tr class="row text-center">
@@ -57,52 +57,53 @@
                         <tbody>
                             <tr class="row">
                                 <td class="col-sm-3">
-                                    <input type="text" name="foodName" class="form-control" />
+                                    <input type="text" id="foodname" name="foodName" class="form-control" />
                                 </td>
                                 <td class="col-sm-2">
-                                    <input type="text" name="protein" class="form-control" />
+                                    <input type="text" id="calories" name="calories" class="form-control" />
                                 </td>
                                 <td class="col-sm-2">
-                                    <input type="text" name="fat" class="form-control" />
+                                    <input type="text" id="protein" name="protein" class="form-control" />
                                 </td>
                                 <td class="col-sm-2">
-                                    <input type="text" name="carbs" class="form-control" />
+                                    <input type="text" id="fat" name="fat" class="form-control" />
                                 </td>
                                 <td class="col-sm-2">
-                                    <input type="text" name="fiber" class="form-control" />
+                                    <input type="text" id="carbs" name="carbs" class="form-control" />
                                 </td>
                                 <td class="col-sm-1"></td>
                             </tr>
                         </tbody>
                         <tfoot>
-                            <tr>
+                            <!-- <tr>
                                 <td colspan="5" style="text-align: left;">
                                     <input type="button" class="btn btn-lg btn-block border" id="addrow" value="Add Row" />
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                             </tr>
                         </tfoot>
                     </table>
                     <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                    <button type="button" class="btn btn-success border" style="float: right;" id="addrow" value="Add Row">Add Row</button>
                 </div>
             </div>
             <div class="card col-sm-6">
                 <div class="card-header">Food Journal</div>
-                <div class="card-body">
+                <div class="card-body p-0">
                     <table id="myTable" class="table">
                         <thead>
                             <tr class="row text-center">
                                 <td class="col-sm-3">Food</td>
-                                <td class="col-sm-3">Calories</td>
+                                <td class="col-sm-2">Calories</td>
                                 <td class="col-sm-2">Protein (g)</td>
                                 <td class="col-sm-2">Fat (g)</td>
                                 <td class="col-sm-2">Carbs (g)</td>
-                                <td class="col-sm-1"></td>
+                                <!-- <td class="col-sm-1"></td> -->
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="row" id="meals"></tr>
+                        <tbody id="meals">
+                            <!-- <tr class="row" id="meals"></tr> -->
                         </tbody>
                     </table>
                 </div>

@@ -1,6 +1,8 @@
 $(document).ready(function() {
     var counter = 0;
 
+    $("#goal").hide();
+
     $("#addrow").on("click", function() {
         var newRow = $("<tr>");
         newRow.addClass("row");
@@ -25,18 +27,21 @@ $(document).ready(function() {
 
     var count = 1;
 
-    $("#submit").on("click", function () {
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+        $("#goal").show();
+        $(".form-control").empty();
 
-        var $header = $("<h5>Meal " + count++ + "</h5><br>");
+        var $header = $("<h6>Meal " + count++ + "</h6><br>");
         $("#meals").append($header);
 
         var newfood = $("#foodname").val().trim();
+        var newcalories = $("#calories").val().trim();
         var newprotein = $("#protein").val().trim();
         var newfat = $("#fat").val().trim();
         var newcarbs = $("#carbs").val().trim();
-        var newfiber = $("#fiber").val().trim();
 
-        $(".card-body").append("<tr><td>" + newfood + "</td><td>" + newprotein + "</td><td>" + newfat + "</td><td>" + newcarbs + "</td><td>" + newfiber + "</td>");
+        $("#meals").append("<tr class='row text-center'><td class='col-sm-3'>" + newfood + "</td><td class='col-sm-2'>" + newcalories + "</td><td class='col-sm-2'>" + newprotein + "</td><td class='col-sm-2'>" + newfat + "</td><td class='col-sm-2'>" + newcarbs + "</td><br>");
 
     });
 });

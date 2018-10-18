@@ -19,12 +19,18 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-light sticky-top bg-light">
+        <a class="navbar-brand" href="#">
+            <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+        </a>
+    </nav>
+    <header>
+        <div class="jumbotron">
+            <h1>Log In/Sign up</h1>
+        </div>
+    </header>
     <div class="container">
-        <header>
-            <div class="jumbotron">
-                <h1>Log</h1>
-            </div>
-        </header>
+
 
         <div class="row" id="goal">
             <div class="card col-sm-12">
@@ -41,8 +47,8 @@
 
         <div class="row">
             <div class="card col-sm-6">
-                <div class="card-header">User Input</div>
-                <div class="card-body p-0">
+                <div class="card-header p-0">User Input</div>
+                <div class="card-body p-0" id="userInput">
                     <table id="myTable" class="table order-list">
                         <thead>
                             <tr class="row text-center">
@@ -85,11 +91,12 @@
                         </tfoot>
                     </table>
                     <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-                    <button type="button" class="btn btn-success border" style="float: right;" id="addrow" value="Add Row">Add Row</button>
+                    <button type="button" class="btn btn-success border" style="float: right;" id="addrow" value="Add Row">Add
+                        Row</button>
                 </div>
             </div>
             <div class="card col-sm-6">
-                <div class="card-header">Food Journal</div>
+                <div class="card-header p-0">Food Journal</div>
                 <div class="card-body p-0">
                     <table id="myTable" class="table">
                         <thead>

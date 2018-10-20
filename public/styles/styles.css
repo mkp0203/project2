@@ -11,16 +11,27 @@
   cursor: pointer;
 }
 
-#remaining {
+/* #remaining {
   width: 100%;
+} */
+
+#login {
+  margin-top: 20px;
+  border-style: groove;
+  border-width: 2px;
+  border-color: blueviolet;
+  padding: 20px;
+  /* padding-left: 50px; */
+}
+.form-group {
+  /* padding-left: 50px; */
 }
 
-
-/* #remaining {
+#remaining {
   list-style: none;
   overflow: hidden;
   padding: 0;
-} */
+}
 
 li {
   float: left;
@@ -32,4 +43,9 @@ li {
   margin-bottom: 25px;
   width: 100%;
 
+}
+
+#userInput {
+  margin-bottom: 30px;
+  margin-right: 20px;
 }

@@ -25,6 +25,32 @@ body {
     overflow-x: hidden;
 }
 
+/* Navbar */
+#navbar {
+  /* position: fixed; */
+  z-index: 1000;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: .75;
+}
+#brand {
+  background: green;
+  padding: 3px;
+  border-radius: 3px;
+}
+#navBtn {
+  background: black;
+}
+.nav-link {
+  padding: 5px 0px 0px 0px;
+}
+
+.container {
+  margin-top: 100px;
+  margin-bottom: 90px;
+}
+
 .jumbotron {
     width: 100%;
     margin-bottom: 10px;
@@ -38,6 +64,7 @@ body {
 
 #userForm {
   margin-bottom: 20px;
+  width: 100%;
 }
 
 #mealLog {
@@ -57,13 +84,6 @@ body {
   float: right;
 }
 
-/* #train {
-    position: absolute;
-    top: -750px;
-    left: -50px;
-    opacity: .5;
-} */
-
 #motto {
     font-size: 20px;
     font-style: italic;
@@ -81,19 +101,29 @@ body {
     font-size: 35px !important;
 }
 
-/* #mealLog {
-    border: none;
-    box-shadow: 0px 0px 4px 2px gray;
-} */
-
-/* #logTable {
-    margin: 0;
-} */
-
-.footer {
+/* .footer {
     height: 80px;
     width: 100%;
     padding-top: 30px;
     margin-top: 10px;
     box-shadow: 0px 0px 4px 2px gray;
+    position: relative;
+    bottom: 0;
+} */
+
+
+/* Footer */
+.footer {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+}
+#footerSpan {
+  font-weight: bold;
+  font-size: 20px;
+}
+.fixer{
+  position: fixed;
+  bottom: 0;
 }

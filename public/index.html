@@ -10,8 +10,8 @@
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <!-- JS -->
-
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
@@ -19,22 +19,25 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light sticky-top bg-light">
-        <a class="navbar-brand" href="#">
-            <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
-        </a>
-    </nav>
-    <header>
-        <div class="jumbotron">
-            <h1>Log In/Sign up</h1>
+
+    <!-- Jumbotron -->
+    <div class="row">
+        <div class="jumbotron bg-dark text-white text-center">
+            <div id="title">
+                <h1 class="header font-weight-bold">Meal Buddy</h1>
+                <p id="motto">Log those meals!</p>
+            </div>
+            <!-- <img src="assets/img/train.jpeg" alt="Train" class="img-responsive" id="train"> -->
         </div>
-    </header>
+    </div>
+
+    <!-- Site Body -->
     <div class="container">
 
-
-        <div class="row" id="goal">
-            <div class="card col-sm-12">
-                <div class="card-body pt-0">
+        <!-- Remaining Card -->
+        <div class="row">
+            <div class="card col-sm-12" id="goal">
+                <div class="card-body">
                     <ul id="remaining">
                         <li class="col-sm-3">Calories: </li>
                         <li class="col-sm-3">Protein: </li>
@@ -45,11 +48,12 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="card col-sm-6">
-                <div class="card-header p-0">User Input</div>
-                <div class="card-body p-0" id="userInput">
-                    <table id="myTable" class="table order-list">
+        <!-- User Meal Submit -->
+        <div class="row text-center">
+            <div class="card bg-light text-dark" id="userForm">
+                <div class="card-body">
+                    <h2 class="text-center" id="addMeal">Add Meal</h2>
+                    <table id="inputTable" class="table order-list">
                         <thead>
                             <tr class="row text-center">
                                 <td class="col-sm-3">Food</td>
@@ -61,9 +65,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="row">
+                            <tr class="row" id="staticRow">
                                 <td class="col-sm-3">
-                                    <input type="text" id="foodname" name="foodName" class="form-control" />
+                                    <input type="text" id="foodName" name="foodName" class="form-control" />
                                 </td>
                                 <td class="col-sm-2">
                                     <input type="text" id="calories" name="calories" class="form-control" />
@@ -80,37 +84,31 @@
                                 <td class="col-sm-1"></td>
                             </tr>
                         </tbody>
-                        <tfoot>
-                            <!-- <tr>
-                                <td colspan="5" style="text-align: left;">
-                                    <input type="button" class="btn btn-lg btn-block border" id="addrow" value="Add Row" />
-                                </td>
-                            </tr> -->
-                            <tr>
-                            </tr>
-                        </tfoot>
                     </table>
                     <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-                    <button type="button" class="btn btn-success border" style="float: right;" id="addrow" value="Add Row">Add
+                    <button type="button" class="btn btn-success border" id="addRow" value="Add Row">Add
                         Row</button>
                 </div>
             </div>
-            <div class="card col-sm-6">
-                <div class="card-header p-0">Food Journal</div>
-                <div class="card-body p-0">
-                    <table id="myTable" class="table">
+        </div>
+
+        <!-- Meal Log -->
+        <div class="row text-center">
+            <div class="card col-sm-12 bg-light text-dark" id="mealLog">
+                <div class="card-body">
+                    <h2 class="text-center" id="log">Meal Log</h2>
+                    <table id="logTable" class="table order-list text-center">
                         <thead>
                             <tr class="row text-center">
                                 <td class="col-sm-3">Food</td>
-                                <td class="col-sm-2">Calories</td>
+                                <td class="col-sm-2">Calories (g)</td>
                                 <td class="col-sm-2">Protein (g)</td>
                                 <td class="col-sm-2">Fat (g)</td>
                                 <td class="col-sm-2">Carbs (g)</td>
-                                <!-- <td class="col-sm-1"></td> -->
                             </tr>
                         </thead>
                         <tbody id="meals">
-                            <!-- <tr class="row" id="meals"></tr> -->
+                            <td></td>
                         </tbody>
                     </table>
                 </div>
@@ -118,13 +116,19 @@
         </div>
     </div>
 
+    <footer class="footer text-center bg-dark text-light">
+        <span>Meal Buddy &copy; 2018</span>
+    </footer>
+
 </body>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-<script src="../public/js/input.js"></script>
+<script src="../public/js/userForm.js"></script>
+<script src="../public/js/main.js"></script>
 
 </html>

@@ -1,8 +1,3 @@
-.card {
-  margin: 0;
-  padding: 0;
-}
-
 .list-group-item {
   line-height: 2.5;
 }
@@ -11,41 +6,94 @@
   cursor: pointer;
 }
 
-/* #remaining {
-  width: 100%;
-} */
-
-#login {
-  margin-top: 20px;
-  border-style: groove;
-  border-width: 2px;
-  border-color: blueviolet;
-  padding: 20px;
-  /* padding-left: 50px; */
-}
-.form-group {
-  /* padding-left: 50px; */
-}
-
-#remaining {
-  list-style: none;
-  overflow: hidden;
-  padding: 0;
-}
-
 li {
   float: left;
   list-style: none;
 }
 
 #goal {
-  padding-top: 0;
   margin-bottom: 25px;
-  width: 100%;
-
+  padding: 0px;
 }
 
-#userInput {
-  margin-bottom: 30px;
-  margin-right: 20px;
+/* Mike Start */
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+    /* background: url("../img/funky-lines.png"); */
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+
+.jumbotron {
+    width: 100%;
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 40px;
+    box-shadow: 0px 0px 4px 2px gray;
+    position: relative;
+    overflow: hidden;
+}
+
+#userForm {
+  margin-bottom: 20px;
+}
+
+#mealLog {
+  margin-bottom: 20px;
+}
+
+#title {
+    z-index: 100;
+    position: relative;
+}
+
+#submit {
+  float: left;
+}
+
+#addRow {
+  float: right;
+}
+
+/* #train {
+    position: absolute;
+    top: -750px;
+    left: -50px;
+    opacity: .5;
+} */
+
+#motto {
+    font-size: 20px;
+    font-style: italic;
+}
+
+#form {
+    box-shadow: 0px 0px 4px 2px gray;
+    border: none;
+    margin-bottom: 10px;
+    /* background-color: #2ef7f9; */
+}
+
+#addMeal {
+    font-weight: bold;
+    font-size: 35px !important;
+}
+
+/* #mealLog {
+    border: none;
+    box-shadow: 0px 0px 4px 2px gray;
+} */
+
+/* #logTable {
+    margin: 0;
+} */
+
+.footer {
+    height: 80px;
+    width: 100%;
+    padding-top: 30px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 4px 2px gray;
 }

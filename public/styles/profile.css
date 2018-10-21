@@ -1,46 +1,57 @@
-.user-row {
-    margin-bottom: 14px;
+body {
+    background-image: url("img/blurred-background-close-up-colors-1438994.jpg");
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
-.user-row:last-child {
-    margin-bottom: 0;
+table td,
+table tr {
+    border: 0;
+    border-color: ghostwhite;
+    padding: 0;
 }
 
-.dropdown-user {
-    margin: 13px 0;
-    padding: 5px;
-    height: 100%;
-}
-
-.dropdown-user:hover {
-    cursor: pointer;
-}
-
-.table-user-information > tbody > tr {
-    border-top: 1px solid rgb(221, 221, 221);
-}
-
-.table-user-information > tbody > tr:first-child {
+#tableU > tbody > tr:first-child {
     border-top: 0;
 }
 
 
-.table-user-information > tbody > tr > td {
+#tableU > tbody > tr > td {
     border-top: 0;
 }
-.pt
-{margin-top:20px;
+.pt {
+    margin-top:20px;
 }
 
 img {
     float: left;
 }
-
+#image {
+    padding-left: 60px; 
+}
 .card {
     /* border-style: groove;
     border-color: blueviolet; */
-    padding-left: 15px;
-    padding-right: 15px;
+    /* padding-left: 0;
+    padding-right: 0; */
+    padding: 0;
     padding-bottom: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 0;
+
+}
+.card-heading {
+    background-color: yellowgreen;
+
+}
+
+.card-info {
+    margin-top: 50px;   
+    
+}
+
+.card-body {
+    padding: 0;
 }

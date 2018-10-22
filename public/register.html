@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSS -->
-    <link rel="stylesheet" href="/styles/register.css">
+    <link rel="stylesheet" href="styles/register.css">
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
@@ -21,25 +21,28 @@
 <body>
     <header>
         <div class="jumbotron">
-            <h1>Log In/Sign up</h1>
+            <!-- <h1>Log In/Sign up</h1> -->
         </div>
     </header>
     <div class="container">
         <!-- <div class="col-md-6 mx-auto text-center"> -->
-        <h1>Register</h1>
+        <!-- <h1>Register</h1> -->
         <!-- </div> -->
         <div class="row">
             <div class="col-md-4 mx-auto">
-                <div class="myform form ">
+                <div class="myform form">
                     <form action="" method="post" name="login">
                         <div class="form-group">
-                            <input type="text" name="name" class="form-control my-input" id="name" placeholder="Name">
+                            <input type="text text-white" name="name" class="form-control my-input text-white" id="name" placeholder="Name">
                         </div>
                         <div class="form-group">
                             <input type="email" name="email" class="form-control my-input" id="email" placeholder="Email">
                         </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control my-input" id="password" placeholder="Password">
+                        </div>
                         <!-- Change this to date of birth -->
-                        <div class="form-group" id="dob">
+                        <div class="form-group text-light" id="dob">
                             Date of Birth:
                             <!-- <select aria-placeholder="Month" class="5dba"></select><select aria-placeholder="Day"></select><select aria-placeholder="Year"></select> -->
                             <span class="_5k_4" data-type="selectors" data-name="birthday_wrapper" id="u_0_q"><span><select
@@ -210,36 +213,24 @@
                                     </select></span></span>
                         </div>
                         <!-- Add a gender option? -->
-                        Gender:
+                        <span class="text-light"> Gender:</span>
                         <span><select aria-label="gender" id="gender">
                                 <option value="female">Female</option>
                                 <option value="male">Male</option>
                             </select></span>
                         <div class="text-center ">
-                            <button type="submit" class=" btn btn-block send-button tx-tfm">Create Your Free Account</button>
+                            <button type="submit" class=" btn btn-block btn-success send-button tx-tfm mt-3">Create
+                                Your Free Account</button>
                         </div>
-                        <!-- <div class="col-md-12 ">
-                            <div class="login-or">
-                                <hr class="hr-or">
-                                <span class="span-or">or</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <a class="btn btn-block g-button" href="#">
-                                <i class="fa fa-google"></i> Sign up with Google
-                            </a>
-                        </div> -->
-                        <p class="small mt-3">By signing up, you are indicating that you have read and agree to the <a
-                                href="#" class="ps-hero__content__link">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+
+                        <p class="small mt-3 text-light     ">By signing up, you are indicating that you have read and
+                            agree to the <a href="#" class="ps-hero__content__link">Terms of Use</a> and <a href="#">Privacy Policy</a>.
                         </p>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <footer class="footer text-center bg-dark text-light">
-        <span>Meal Buddy &copy; 2018</span>
-    </footer>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

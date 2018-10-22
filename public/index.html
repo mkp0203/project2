@@ -5,116 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>BiteTracker</title>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <!-- <script src="../public/js/firebase.js"></script> -->
+    <script src="../public/js/userForm.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
-    <title>Food Log</title>
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar bg-dark navbar-dark" id="navbar">
-        <a class="navbar-brand" href="index.html" id="brand">Meal Buddy</a>
-        <div class="btn-group">
-            <button type="button" class="btn btn-lg btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                Menu
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" id="brand"><i class="fas fa-cookie-bite"></i> BiteTracker</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="dropdown-menu text-left">
-                <!-- Dropdown menu links -->
-                <li class="dropdown-item nav-item text-right nav-link">
-                    <a class="nav-link" href="./index.html">
-                        <i class="fas fa-home"></i> Home
-                    </a>
-                </li>
-                <li class="dropdown-item nav-item text-right nav-link">
-                    <a class="nav-link" href="./profile.html">
-                        <i class="fas fa-star"></i> Profile
-                    </a>
-                </li>
-                <li class="dropdown-item nav-item text-right nav-link">
-                    <a class="nav-link" href="../public/signin.html">
-                        <i class="fas fa-sign-in-alt"></i> Sign-In
-                    </a>
-                </li>
-                <li class="dropdown-item nav-item text-right nav-link">
-                    <a class="nav-link" href="../public/register.html">
-                        <i class="fas fa-clipboard"></i> Register
-                    </a>
-                </li>
-                <li id="signout" class="dropdown-item nav-item text-right nav-link">
-                    <a class="nav-link" href="../public/signin.html">
-                        <i class="fas fa-sign-out-alt"></i> Sign Out
-                    </a>
-                </li>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./signin.html">Sign-Out</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <!-- Toggler/collapsible Button
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        Navbar links
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item text-right nav-link">
-                    <a class="nav-link" href="./index.html">
-                        <i class="fas fa-home"></i> Home
-                    </a>
-                </li>
-                <li class="nav-item text-right nav-link">
-                    <a class="nav-link" href="./profile.html">
-                        <i class="fas fa-star"></i> Profile
-                    </a>
-                </li>
-                <li class="nav-item text-right nav-link">
-                    <a class="nav-link" href="../crash_alderson/sign-in.html">
-                        <i class="fas fa-sign-in-alt"></i> Sign-In
-                    </a>
-                </li>
-                <li class="nav-item text-right nav-link">
-                    <a class="nav-link" href="../crash_alderson/create-account.html">
-                        <i class="fas fa-clipboard"></i> Register
-                    </a>
-                </li>
-                <li id="signout" class="nav-item text-right nav-link">
-                    <a class="nav-link" href="../crash_alderson/index.html">
-                        <i class="fas fa-sign-out-alt"></i> Sign Out
-                    </a>
-                </li>
-            </ul>
-        </div> -->
     </nav>
-    <!-- Jumbotron -->
-    <!-- <div class="row">
-        <div class="jumbotron bg-dark text-white text-center">
-            <div id="title">
-                <h1 class="header font-weight-bold">Meal Buddy</h1>
-                <p id="motto">Log those meals!</p>
-            </div>
-            <img src="assets/img/train.jpeg" alt="Train" class="img-responsive" id="train">
-        </div>
-    </div> -->
 
     <!-- Site Body -->
     <div class="container">
 
         <!-- Remaining Card -->
         <div class="row">
-            <div class="card col-sm-12" id="goal">
+            <div class="card col-sm-12" id="goalCard">
                 <div class="card-body">
+                    <ul id="dailyGoal">
+                        <li class="col-sm-3">Your Daily Goal:</li>
+                        <li class="col-sm-2">Calories: 2000</li>
+                        <li class="col-sm-2">Protein: 100g</li>
+                        <li class="col-sm-2">Fat: 75g</li>
+                        <li class="col-sm-2">Carbs: 200g</li>
+                    </ul>
                     <ul id="remaining">
-                        <li class="col-sm-3">Calories: </li>
-                        <li class="col-sm-3">Protein: </li>
-                        <li class="col-sm-3">Fat: </li>
-                        <li class="col-sm-3">Carbs: </li>
+                        <li class="col-sm-3">Remaining:</li>
+                        <li class="col-sm-2">Calories: 1500</li>
+                        <li class="col-sm-2">Protein: 50g</li>
+                        <li class="col-sm-2">Fat: 20g</li>
+                        <li class="col-sm-2">Carbs: 50g</li>
                     </ul>
                 </div>
             </div>
@@ -129,7 +90,7 @@
                         <thead>
                             <tr class="row text-center">
                                 <td class="col-sm-3">Food</td>
-                                <td class="col-sm-2">Calories (g)</td>
+                                <td class="col-sm-2">Calories</td>
                                 <td class="col-sm-2">Protein (g)</td>
                                 <td class="col-sm-2">Fat (g)</td>
                                 <td class="col-sm-2">Carbs (g)</td>
@@ -158,7 +119,7 @@
                         </tbody>
                     </table>
                     <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-                    <button type="button" class="btn btn-success border" id="addRow" value="Add Row">Add
+                    <button type="button" class="btn btn-success" id="addRow" value="Add Row">Add
                         Row</button>
                 </div>
             </div>
@@ -168,15 +129,15 @@
         <div class="row text-center">
             <div class="card col-sm-12 bg-light text-dark" id="mealLog">
                 <div class="card-body">
-                    <h2 class="text-center" id="log">Meal Log</h2>
+                    <h2 class="text-center" id="logHeader">Meal Log</h2>
                     <table id="logTable" class="table order-list text-center">
                         <thead>
                             <tr class="row text-center">
-                                <td class="col-sm-3">Food</td>
-                                <td class="col-sm-2">Calories (g)</td>
-                                <td class="col-sm-2">Protein (g)</td>
-                                <td class="col-sm-2">Fat (g)</td>
-                                <td class="col-sm-2">Carbs (g)</td>
+                                <td class="col-sm-3" id="foodEntry">Food</td>
+                                <td class="col-sm-2" id="caloriesEntry">Calories</td>
+                                <td class="col-sm-2" id="proteinEntry">Protein (g)</td>
+                                <td class="col-sm-2" id="fatEntry">Fat (g)</td>
+                                <td class="col-sm-2" id="carbsEntry">Carbs (g)</td>
                             </tr>
                         </thead>
                         <tbody id="meals">
@@ -191,19 +152,11 @@
     <!-- Footer -->
     <footer class="footer bg-dark text-light">
         <div class="col-sm-12 text-center">
-            <span id="footerSpan">Meal Buddy &copy; 2018</span>
+            <span id="footerSpan">BiteTracker &copy; 2018</span>
         </div>
     </footer>
 
 </body>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-<script src="../public/js/userForm.js"></script>
-<script src="../public/js/main.js"></script>
 
 </html>

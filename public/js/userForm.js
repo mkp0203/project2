@@ -1,6 +1,29 @@
 $(document).ready(function () {
 
-    $("#goal").show();
+    var count = 1;
+
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+        $(".form-control").empty();
+
+        var $header = $("<h5 class='text-left' style='font-weight: bold;'>Meal " + count++ + "</h5>");
+        $("#meals").append($header);
+
+        var newfood = $("#foodName").val().trim();
+        var newcalories = $("#calories").val().trim();
+        var newprotein = $("#protein").val().trim();
+        var newfat = $("#fat").val().trim();
+        var newcarbs = $("#carbs").val().trim();
+
+        $("#meals").append("<tr class='row text-center'><td class='col-sm-3'>" + newfood + "</td><td class='col-sm-2'>" + newcalories + "</td><td class='col-sm-2'>" + newprotein + "</td><td class='col-sm-2'>" + newfat + "</td><td class='col-sm-2'>" + newcarbs + "</td><br>");
+
+        $("#foodName").val("");
+        $("#calories").val("");
+        $("#protein").val("");
+        $("#fat").val("");
+        $("#carbs").val("");
+
+    });
 
     var counter = 1;
 
@@ -27,22 +50,4 @@ $(document).ready(function () {
         counter -= 1;
     });
 
-    var count = 1;
-
-    $("#submit").on("click", function (event) {
-        event.preventDefault();
-        $(".form-control").empty();
-
-        var $header = $("<h6>Meal " + count++ + "</h6>");
-        $("#meals").append($header);
-
-        var newfood = $("#foodName").val().trim();
-        var newcalories = $("#calories").val().trim();
-        var newprotein = $("#protein").val().trim();
-        var newfat = $("#fat").val().trim();
-        var newcarbs = $("#carbs").val().trim();
-
-        $("#meals").append("<tr class='row text-center'><td class='col-sm-3'>" + newfood + "</td><td class='col-sm-2'>" + newcalories + "</td><td class='col-sm-2'>" + newprotein + "</td><td class='col-sm-2'>" + newfat + "</td><td class='col-sm-2'>" + newcarbs + "</td><br>");
-
-    });
 });

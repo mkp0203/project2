@@ -10,18 +10,42 @@
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <!-- JS -->
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
-    <title>Food Log</title>
+    <title>BiteTracker</title>
 </head>
 
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" id="brand"><i class="fas fa-cookie-bite"></i> BiteTracker</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../public/index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./signin.html">Sign-Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">About Me</h1>
+            <h1 class="display-4" id="heading">About Me</h1>
             <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
         </div>
     </div>
@@ -196,9 +220,12 @@
     <!-- container fluid -->
     </div>
 
-    <!-- <footer class="footer text-center bg-dark text-light">
-        <span>Meal Buddy &copy; 2018</span>
-    </footer> -->
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light">
+        <div class="col-sm-12 text-center">
+            <span id="footerSpan">BiteTracker &copy; 2018</span>
+        </div>
+    </footer>
 
 </body>
 <!-- JQuery -->

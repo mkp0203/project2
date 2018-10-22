@@ -1,7 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar */
+#navbar {
+    box-shadow: 0px 0px 4px 1px;
+    position: relative;
+  }
+  
+  #brand {
+    background: rgb(10, 177, 93);
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 30px;
+  }
+  
+  #navBtn {
+    background: black;
+  }
+  
+  .nav-link {
+    padding: 5px 0px 0px 0px;
+  }
+
+#heading {
+    font-weight: bold;
+}
 
 .jumbotron {
     background-image: url("img/blurred-background-close-up-colors-1438994.jpg");
-    height: 300px;
+    height: 250px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,7 +40,11 @@
     border-bottom-color: lightgray;
     border-bottom-style: solid;
     color: aliceblue;   
-    text-align: center
+    text-align: center;
+}
+
+#heading {
+    padding-top: 30px;
 }
 
 table td,
@@ -24,10 +58,10 @@ table tr {
     border-top: 0;
 }
 
-
 #tableU > tbody > tr > td {
     border-top: 0;
 }
+
 .pt {
     margin-top:20px;
 }
@@ -35,6 +69,7 @@ table tr {
 img {
     float: left;
 }
+
 #image {
     padding-left: 60px; 
     /* padding-top: 30px; */
@@ -49,14 +84,27 @@ img {
     margin-top: 15px;
 }
 
+/* Footer */
+.footer {
+    /* position: relative; */
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    padding: 20px;
+  }
+  
+  #footerSpan {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
 /* Photos Tab CSS */
 
-  
+
 @media (max-width:991px){
     .img_space{
-      margin-bottom:10px;
+        margin-bottom:10px;
     }
-    
-    
+
+
 }
-    

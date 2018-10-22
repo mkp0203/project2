@@ -19,15 +19,21 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="pr-wrap">
-                    <div class="pass-reset">
-                        <label>
-                            Enter the email you signed up with</label>
-                        <input type="email" placeholder="Email" />
-                        <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" />
+
+    <!-- <div class="landingImg"></div> -->
+
+    <section>
+        <div class="signin-wrapper clearfix">
+            <div class="col-md-12 centered clearfix">
+                <div class="signin " style="max-width: 440px;margin: 0 auto;">
+                    <div class="signin-heading centered">
+                        <h4 class="c-slate lineHeight-l fontSize-l fontWeight-5 textAlign-center breakPointS-fontSize-xl">Welcome
+                            back!<br /></h4>
+                    </div>
+                    <div class="marginBottom-l textAlign-center">
+                        <span class="fontSize-m">
+                            Sign in here:
+                        </span>
                     </div>
                 </div>
                 <div class="wrap">
@@ -56,24 +62,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-
-    <footer class="footer text-center bg-dark text-light">
-        <span>Meal Buddy &copy; 2018</span>
-    </footer>
-
-    <script>
-        $(document).ready(function () {
-            $('.forgot-pass').click(function (event) {
-                $(".pr-wrap").toggleClass("show-pass-reset");
-            });
-
-            $('.pass-reset-submit').click(function (event) {
-                $(".pr-wrap").removeClass("show-pass-reset");
-            });
-        });
-    </script>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

@@ -3,83 +3,23 @@
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
- html {
-    font-family: sans-serif;
-    /* 1 */
-    -ms-text-size-adjust: 100%;
-    /* 2 */
-    -webkit-text-size-adjust: 100%;
-    /* 2 */ }
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  }
   
-  /**
-   * Remove the margin in all browsers (opinionated).
-   */
-  body {
-    margin: 0; }
+body {
+  margin: 0; 
+  }
+progress {
+  vertical-align: baseline; 
+}
   
-  /* HTML5 display definitions
-     ========================================================================== */
-  /**
-   * Add the correct display in IE 9-.
-   * 1. Add the correct display in Edge, IE, and Firefox.
-   * 2. Add the correct display in IE.
-   */
-  article,
-  aside,
-  details,
-  figcaption,
-  figure,
-  footer,
-  header,
-  main,
-  menu,
-  nav,
-  section,
-  summary {
-    /* 1 */
-    display: block; }
-  
-  /**
-   * Add the correct display in IE 9-.
-   */
-  audio,
-  canvas,
-  progress,
-  video {
-    display: inline-block; }
-  
-  /**
-   * Add the correct display in iOS 4-7.
-   */
-  audio:not([controls]) {
-    display: none;
-    height: 0; }
-  
-  /**
-   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
-   */
-  progress {
-    vertical-align: baseline; }
-  
-  /**
-   * Add the correct display in IE 10-.
-   * 1. Add the correct display in IE.
-   */
-  template,
-  [hidden] {
-    display: none; }
-  
-  /* Links
-     ========================================================================== */
-  /**
-   * 1. Remove the gray background on active links in IE 10.
-   * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
-   */
-  a {
-    background-color: transparent;
-    /* 1 */
-    -webkit-text-decoration-skip: objects;
-    /* 2 */ }
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
   
   /**
    * Remove the outline on focused links when they are also active or hovered
@@ -797,58 +737,188 @@
     .input--default:hover {
       box-shadow: none; }
   
-  .input {
-    outline-style: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 1px solid #d3dce6;
-    vertical-align: middle; }
-    .input:hover {
-      border-color: #bdc6cf; }
-    .input:focus {
-      border-color: #1fb6ff; }
-  
-  .uiIcon .input:focus + .svgIcon {
-    fill: #1fb6ff; }
-  
-  .input--l {
-    border-radius: 4px; }
-  
-  .fill-smoke--d {
-    fill: #d3dce6; }
-  
-  .svgIcon {
-    transition-duration: 80ms;
-    transition-timing-function: linear; }
-  
-  .uiIcon--l .svgIcon {
-    margin-top: 10px;
-    margin-left: 10px;
-    line-height: 50px;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    position: absolute; }
-  
-  svg:not(:root) {
-    overflow: hidden; }
-  
-  .forgot-password {
-    font-size: 16px; }
-  
-  .c-blue, .explore-links a, .link--blue {
-    color: #1fb6ff; }
-  
-  .link {
-    cursor: pointer;
-    text-decoration: none;
-    transition-timing-function: linear;
-    transition-duration: .15s; }
-  
-  .link--light {
-    color: #8492a6; }
-  
+      body
+      {
+          background: url('http://farm3.staticflickr.com/2832/12303719364_c25cecdc28_b.jpg') fixed;
+          background-size: cover;
+          padding: 0;
+          margin: 0;
+      }
+      
+      .wrap
+      {
+          width: 100%;
+          height: 100%;
+          min-height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 99;
+      }
+      
+      p.form-title
+      {
+          font-family: 'Open Sans' , sans-serif;
+          font-size: 20px;
+          font-weight: 600;
+          text-align: center;
+          color: #FFFFFF;
+          margin-top: 5%;
+          text-transform: uppercase;
+          letter-spacing: 4px;
+      }
+      
+      form
+      {
+          width: 250px;
+          margin: 0 auto;
+      }
+      
+      form.login input[type="text"], form.login input[type="password"]
+      {
+          width: 100%;
+          margin: 0;
+          padding: 5px 10px;
+          background: 0;
+          border: 0;
+          border-bottom: 1px solid #FFFFFF;
+          outline: 0;
+          font-style: italic;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 1px;
+          margin-bottom: 5px;
+          color: #FFFFFF;
+          outline: 0;
+      }
+      
+      form.login input[type="submit"]
+      {
+          width: 100%;
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: 500;
+          margin-top: 16px;
+          outline: 0;
+          cursor: pointer;
+          letter-spacing: 1px;
+      }
+      
+      form.login input[type="submit"]:hover
+      {
+          transition: background-color 0.5s ease;
+      }
+      
+      form.login .remember-forgot
+      {
+          float: left;
+          width: 100%;
+          margin: 10px 0 0 0;
+      }
+      form.login .forgot-pass-content
+      {
+          min-height: 20px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+      }
+      form.login label, form.login a
+      {
+          font-size: 12px;
+          font-weight: 400;
+          color: #FFFFFF;
+      }
+      
+      form.login a
+      {
+          transition: color 0.5s ease;
+      }
+      
+      form.login a:hover
+      {
+          color: #2ecc71;
+      }
+      
+      .pr-wrap
+      {
+          width: 100%;
+          height: 100%;
+          min-height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 999;
+          display: none;
+      }
+      
+      .show-pass-reset
+      {
+          display: block !important;
+      }
+      
+      .pass-reset
+      {
+          margin: 0 auto;
+          width: 250px;
+          position: relative;
+          margin-top: 22%;
+          z-index: 999;
+          background: #FFFFFF;
+          padding: 20px 15px;
+      }
+      
+      .pass-reset label
+      {
+          font-size: 12px;
+          font-weight: 400;
+          margin-bottom: 15px;
+      }
+      
+      .pass-reset input[type="email"]
+      {
+          width: 100%;
+          margin: 5px 0 0 0;
+          padding: 5px 10px;
+          background: 0;
+          border: 0;
+          border-bottom: 1px solid #000000;
+          outline: 0;
+          font-style: italic;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 1px;
+          margin-bottom: 5px;
+          color: #000000;
+          outline: 0;
+      }
+      
+      .pass-reset input[type="submit"]
+      {
+          width: 100%;
+          border: 0;
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: 500;
+          margin-top: 10px;
+          outline: 0;
+          cursor: pointer;
+          letter-spacing: 1px;
+      }
+      
+      .pass-reset input[type="submit"]:hover
+      {
+          transition: background-color 0.5s ease;
+      }
+      .posted-by
+      {
+          position: absolute;
+          bottom: 26px;
+          margin: 0 auto;
+          color: #FFF;
+          background-color: rgba(0, 0, 0, 0.66);
+          padding: 10px;
+          left: 45%;
+      }
+      
   @media screen and (min-width: 768px) {
     .link--light:hover {
       color: #1f2d3d; } }

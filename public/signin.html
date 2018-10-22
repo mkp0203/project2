@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSS -->
-    <link rel="stylesheet" href="../public/styles/styles.css">
+    <link rel="stylesheet" href="styles/signin.css">
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
@@ -19,49 +19,51 @@
 </head>
 
 <body>
-    <header>
-        <div class="jumbotron">
-            <h1>Log In/Sign up</h1>
-        </div>
-    </header>
-    <div class="container">
 
+    <!-- <div class="landingImg"></div> -->
 
+    <section>
         <div class="signin-wrapper clearfix">
-            <form id="login" class="col-md-6 offset-md-3">
-                <div class="form-group row">
-                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-5">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            <div class="col-md-12 centered clearfix">
+                <div class="signin " style="max-width: 440px;margin: 0 auto;">
+                    <div class="signin-heading centered">
+                        <h4 class="c-slate lineHeight-l fontSize-l fontWeight-5 textAlign-center breakPointS-fontSize-xl">Welcome
+                            back!<br /></h4>
+                    </div>
+                    <div class="marginBottom-l textAlign-center">
+                        <span class="fontSize-m">
+                            Sign in here:
+                        </span>
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-5">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1">
-                            <label class="form-check-label" for="gridCheck1">
-                                Stay logged in?
-                            </label>
+                <div class="wrap">
+                    <p class="form-title">
+                        Sign In</p>
+                    <form class="login">
+                        <input type="text" placeholder="Username" />
+                        <input type="password" placeholder="Password" />
+                        <input type="submit" value="Sign In" class="btn btn-success btn-sm" />
+                        <div class="remember-forgot">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" />
+                                            Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 forgot-pass-content">
+                                    <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
-
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
+    </section>
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

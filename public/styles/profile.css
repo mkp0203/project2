@@ -1,10 +1,16 @@
-body {
+
+.jumbotron {
     background-image: url("img/blurred-background-close-up-colors-1438994.jpg");
-    height: 500px;
+    height: 300px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    border-bottom-width: 2px;
+    border-bottom-color: lightgray;
+    border-bottom-style: solid;
+    color: aliceblue;   
+    text-align: center
 }
 
 table td,
@@ -31,27 +37,26 @@ img {
 }
 #image {
     padding-left: 60px; 
-}
-.card {
-    /* border-style: groove;
-    border-color: blueviolet; */
-    /* padding-left: 0;
-    padding-right: 0; */
-    padding: 0;
-    padding-bottom: 0px;
-    margin-bottom: 0;
-
-}
-.card-heading {
-    background-color: yellowgreen;
-
+    /* padding-top: 30px; */
+    margin-top: 10px;
 }
 
-.card-info {
-    margin-top: 50px;   
+#infobar {
+    margin-left: 30px;
+    display: block
+}
+#gallery {
+    margin-top: 15px;
+}
+
+/* Photos Tab CSS */
+
+  
+@media (max-width:991px){
+    .img_space{
+      margin-bottom:10px;
+    }
+    
     
 }
-
-.card-body {
-    padding: 0;
-}
+    

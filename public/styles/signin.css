@@ -10,12 +10,27 @@
     /* 2 */
     -webkit-text-size-adjust: 100%;
     /* 2 */ }
+
+  
+  
   
   /**
    * Remove the margin in all browsers (opinionated).
    */
   body {
-    margin: 0; }
+    /* The image used */
+    background-image: url("../styles/img/pexels-photo-461428.jpeg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    margin: 0;
+  }
   
   /* HTML5 display definitions
      ========================================================================== */

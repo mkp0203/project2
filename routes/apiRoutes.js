@@ -21,7 +21,7 @@ module.exports = function(app) {
 
   // Create a new example
   app.post("/api/user", function(req, res) {
-    console.log(req);
+    // console.log(req);
     db.User.create({name: req.body.name, email: req.body.email, password: req.body.password}).then(function(fitness_db) {
       res.json(fitness_db);
     });

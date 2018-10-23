@@ -18,6 +18,10 @@ module.exports = function(app) {
       res.json(fitness_db);
     });
   });
+  //Spoonacular API
+  app.get("/api/recipes", function(req, res) {
+    
+  })
 
   // Create a new example
   app.post("/api/user", function(req, res) {

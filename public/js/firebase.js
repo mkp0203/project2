@@ -1,21 +1,27 @@
 $(document).ready(function () {
 
-    // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyDyiqkF5Gzz8iiU6peXp_75PPmqVT8PozM",
-        authDomain: "project-2-95dad.firebaseapp.com",
-        databaseURL: "https://project-2-95dad.firebaseio.com",
-        projectId: "project-2-95dad",
-        storageBucket: "project-2-95dad.appspot.com",
-        messagingSenderId: "410873755961"
+        apiKey: "AIzaSyB8Tn5CbsysjIlSCe9sfWfDAwKtm3XTIvw",
+        authDomain: "test-2cc12.firebaseapp.com",
+        databaseURL: "https://test-2cc12.firebaseio.com",
+        projectId: "test-2cc12",
+        storageBucket: "test-2cc12.appspot.com",
+        messagingSenderId: "759222385452"
     };
+
     firebase.initializeApp(config);
     var database = firebase.database();
 
+    var count = 1;
+
     // On Submit
     $("#submit").on("click", function (event) {
-
+        // console.log("yo");
         event.preventDefault();
+        // alert("test");
+
+        var $header = $("<h5 class='text-left' style='font-weight: bold;'>Meal " + count++ + "</h5>");
+        $("#meals").append($header);
 
         var food = $("#foodName").val().trim();
         var calories = $("#calories").val().trim();
@@ -23,7 +29,9 @@ $(document).ready(function () {
         var fat = $("#fat").val().trim();
         var carbs = $("#carbs").val().trim();
 
-        var mealEntry = {
+        var dynamic = $(".dynamic").val().trim();
+
+        var firstRow = {
             food: food,
             calories: calories,
             protein: protein,
@@ -31,7 +39,14 @@ $(document).ready(function () {
             carbs: carbs
         };
 
-        database.ref().push(mealEntry);
+        var dynamicRows = {
+            dynamic: dynamic
+        };
+
+        database.ref().push(firstRow);
+        database.ref().push(dynamicRows);
+
+        $("#meals").append("<tr class='row text-center'><td class='col-sm-3'>" + food + "</td><td class='col-sm-2'>" + calories + "</td><td class='col-sm-2'>" + protein + "</td><td class='col-sm-2'>" + fat + "</td><td class='col-sm-2'>" + carbs + "</td><br>");
 
         $("#foodName").val("");
         $("#calories").val("");
@@ -39,44 +54,46 @@ $(document).ready(function () {
         $("#fat").val("");
         $("#carbs").val("");
 
-    });
-
-    // ???
-    database.ref().on("child_added", function (childSnapshot) {
-
-        var food = childSnapshot.val().food;
-        var calories = childSnapshot.val().calories;
-        var protein = childSnapshot.val().protein;
-        var fat = childSnapshot.val().fat;
-        var carbs = childSnapshot.val().carbs;
-
-        $("#meals").prepend("<tr><td>" + food + "</td><td>" + calories + "</td><td>" + protein + "</td><td>" + fat + "</td><td>" + carbs + "</td></tr>");
+        $(".dynamic").val("");
+        $(".dynamicRow").remove();
 
     });
 
-    // Add Row
+    // database.ref().on("child_added", function (childSnapshot) {
+
+    //     var name = childSnapshot.val().name;
+    //     var dest = childSnapshot.val().dest;
+    //     var fTrain = childSnapshot.val().fTrain;
+    //     var freq = childSnapshot.val().freq;
+    //     var freq = childSnapshot.val().freq;
+
+    //     $("#table > tbody").prepend("<tr><td>" + name + "</td><td>" + dest + "</td><td>" + freq + "</td><td>" + nextTrain + "</td><td>" + minsToTrain + "</td></tr>");
+
+    // });
+
     var counter = 1;
+
     $("#addRow").on("click", function () {
         var newRow = $("<tr>");
-        newRow.addClass("row");
-        newRow.attr("id", "row" + counter);
+        newRow.addClass("row dynamicRow");
+        console.log(newRow);
 
         var cols = "";
-        cols += '<td class="col-sm-3"><input type="text" class="form-control" id="foodName' + counter + '"/></td>';
-        cols += '<td class="col-sm-2"><input type="text" class="form-control" id="calories' + counter + '"/></td>';
-        cols += '<td class="col-sm-2"><input type="text" class="form-control" id="protein' + counter + '"/></td>';
-        cols += '<td class="col-sm-2"><input type="text" class="form-control" id="fat' + counter + '"/></td>';
-        cols += '<td class="col-sm-2"><input type="text" class="form-control" id="carbs' + counter + '"/></td>';
-        cols += '<td class="col-sm-1"><span id="clickFA"><i class="ibtnDel fas fa-trash-alt fa-2x"></span></td>';
+        cols += '<td class="col-sm-3"><input type="text" class="form-control dynamic" id="foodName' + counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control dynamic" id="calories' + counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control dynamic" id="protein' + counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control dynamic" id="fat' + counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control dynamic" id="carbs' + counter + '"/></td>';
+        cols += '<td class="col-sm-1 dynamic"><span id="clickFA"><i class="ibtnDel fas fa-trash-alt fa-2x trash"></span></td>';
         newRow.append(cols);
 
         $("#inputTable").append(newRow);
         counter++;
     });
 
-    // Trash Can
     $("table.order-list").on("click", ".ibtnDel", function (event) {
         $(this).closest("tr").remove();
         counter -= 1;
     });
+
 });

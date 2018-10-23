@@ -1,9 +1,39 @@
-.list-group-item {
-  line-height: 2.5;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  background: url('../styles/img/gravel.png');
 }
 
-#clickFA {
-  cursor: pointer;
+/* Navbar */
+#navbar {
+  box-shadow: 0px 0px 4px 1px;
+}
+
+#brand {
+  background: rgb(10, 177, 93);
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 30px;
+}
+
+#navBtn {
+  background: black;
+}
+
+.nav-link {
+  padding: 5px 0px 0px 0px;
+}
+
+#goalCard {
+  margin: 40px 0px 40px 0px;
+  box-shadow: 0px 0px 2px 1px;
+  border: none;
+}
+
+#dailyGoal {
+  font-weight: bold;
 }
 
 li {
@@ -11,37 +41,21 @@ li {
   list-style: none;
 }
 
-#goal {
-  margin-bottom: 25px;
-  padding: 0px;
-}
-
-/* Mike Start */
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-
-body {
-    /* background: url("../img/funky-lines.png"); */
-    font-family: 'Raleway', sans-serif;
-    overflow-x: hidden;
-}
-
-.jumbotron {
-    width: 100%;
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    padding: 40px;
-    box-shadow: 0px 0px 4px 2px gray;
-    position: relative;
-    overflow: hidden;
-}
-
 #userForm {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  box-shadow: 0px 0px 2px 1px;
+  border: none;
 }
 
 #mealLog {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 2px 1px;
+  border: none;
+}
+
+#logHeader {
+  font-weight: bold;
 }
 
 #title {
@@ -57,13 +71,6 @@ body {
   float: right;
 }
 
-/* #train {
-    position: absolute;
-    top: -750px;
-    left: -50px;
-    opacity: .5;
-} */
-
 #motto {
     font-size: 20px;
     font-style: italic;
@@ -73,7 +80,6 @@ body {
     box-shadow: 0px 0px 4px 2px gray;
     border: none;
     margin-bottom: 10px;
-    /* background-color: #2ef7f9; */
 }
 
 #addMeal {
@@ -81,19 +87,22 @@ body {
     font-size: 35px !important;
 }
 
-/* #mealLog {
-    border: none;
-    box-shadow: 0px 0px 4px 2px gray;
-} */
-
-/* #logTable {
-    margin: 0;
-} */
-
+/* Footer */
 .footer {
-    height: 80px;
-    width: 100%;
-    padding-top: 30px;
-    margin-top: 10px;
-    box-shadow: 0px 0px 4px 2px gray;
+  /* position: relative; */
+  width: 100%;
+  height: 80px;
+  bottom: 0;
+  padding: 20px;
+}
+
+#footerSpan {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
 }

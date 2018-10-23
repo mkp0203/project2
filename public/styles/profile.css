@@ -1,46 +1,110 @@
-.user-row {
-    margin-bottom: 14px;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
-.user-row:last-child {
-    margin-bottom: 0;
+/* Navbar */
+#navbar {
+    box-shadow: 0px 0px 4px 1px;
+    position: relative;
+  }
+  
+  #brand {
+    background: rgb(10, 177, 93);
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 30px;
+  }
+  
+  #navBtn {
+    background: black;
+  }
+  
+  .nav-link {
+    padding: 5px 0px 0px 0px;
+  }
+
+#heading {
+    font-weight: bold;
 }
 
-.dropdown-user {
-    margin: 13px 0;
-    padding: 5px;
-    height: 100%;
+.jumbotron {
+    background-image: url("img/blurred-background-close-up-colors-1438994.jpg");
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-bottom-width: 2px;
+    border-bottom-color: lightgray;
+    border-bottom-style: solid;
+    color: aliceblue;   
+    text-align: center;
 }
 
-.dropdown-user:hover {
-    cursor: pointer;
+#heading {
+    padding-top: 30px;
 }
 
-.table-user-information > tbody > tr {
-    border-top: 1px solid rgb(221, 221, 221);
+table td,
+table tr {
+    border: 0;
+    border-color: ghostwhite;
+    padding: 0;
 }
 
-.table-user-information > tbody > tr:first-child {
+#tableU > tbody > tr:first-child {
     border-top: 0;
 }
 
-
-.table-user-information > tbody > tr > td {
+#tableU > tbody > tr > td {
     border-top: 0;
 }
-.pt
-{margin-top:20px;
+
+.pt {
+    margin-top:20px;
 }
 
 img {
     float: left;
 }
 
-.card {
-    /* border-style: groove;
-    border-color: blueviolet; */
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 0px;
-    margin-bottom: 40px;
+#image {
+    padding-left: 60px; 
+    /* padding-top: 30px; */
+    margin-top: 10px;
+}
+
+#infobar {
+    margin-left: 30px;
+    display: block
+}
+#gallery {
+    margin-top: 15px;
+}
+
+/* Footer */
+.footer {
+    /* position: relative; */
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    padding: 20px;
+  }
+  
+  #footerSpan {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+/* Photos Tab CSS */
+
+
+@media (max-width:991px){
+    .img_space{
+        margin-bottom:10px;
+    }
+
+
 }

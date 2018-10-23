@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(fitness_db) {
+    db.User.findAll({}).then(function(fitness_db) {
       res.render("index", {
         msg: "Welcome!",
         examples: fitness_db

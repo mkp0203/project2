@@ -1,17 +1,16 @@
 module.exports = function(sequelize, DataTypes) {
     var Nutrition = sequelize.define("Nutrition", {
-      title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
-        }
-      },
-      body: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-        len: [1]
-      }
+        profile_id : {
+            primaryKey      : true,
+            autoIncrement   : true,
+            type            : DataTypes.INTEGER,
+            allowNull       : false
+        },
+        Food:DataTypes.STRING,
+        Calories: DataTypes.INTEGER,
+        Fat:DataTypes.INTEGER,
+        Carbohydrates: DataTypes.INTEGER,
+        Protein: DataTypes. INTEGER
     });
   
     Nutrition.associate = function(models) {

@@ -17,19 +17,13 @@
   /**
    * Remove the margin in all browsers (opinionated).
    */
-  body {
-    /* The image used */
-    background-image: url("../styles/img/pexels-photo-461428.jpeg");
-
-    /* Full height */
-    height: 100%; 
-
-    /* Center and scale the image nicely */
+   body {
+    background-image: url("img/bamboo-bamboo-whisk-board-461428.jpg");
+    height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    margin: 0;
+    position: relative;
   }
   
 body {
@@ -676,7 +670,11 @@ a {
   .signin-wrapper {
     font-family: 'Roboto', sans-serif !important;
     padding-top: 80px;
-    font-size: 16px; }
+    font-size: 16px; 
+  }
+.signin {
+  margin-left: 50px;
+}
   
   .c-slate {
     color: #3c4858; }
@@ -762,7 +760,7 @@ a {
   
       body
       {
-          background: url('http://farm3.staticflickr.com/2832/12303719364_c25cecdc28_b.jpg') fixed;
+          background: url('img/bamboo-bamboo-whisk-board-461428.jpg') fixed;
           background-size: cover;
           padding: 0;
           margin: 0;

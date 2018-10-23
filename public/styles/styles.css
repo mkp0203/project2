@@ -48,6 +48,10 @@ li {
   border: none;
 }
 
+.trash {
+  cursor: pointer;
+}
+
 #mealLog {
   margin-bottom: 40px;
   box-shadow: 0px 0px 2px 1px;

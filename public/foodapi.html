@@ -16,6 +16,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <title>Food Log</title>
 </head>
 
@@ -29,7 +30,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="./index.html">Home
                             <span class="sr-only">(current)</span>
                         </a>
@@ -38,26 +39,26 @@
                         <a class="nav-link" href="./profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./signin.html">Sign-Out</a>
+                        <a class="nav-link" href="./foodapi.html">RecipeSearch</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./foodapi.html">RecipeSearch</a>
+                        <a class="nav-link" href="./signin.html">Sign-Out</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="jumbotron jumbotron-fluid">
-        <div class="col-md-10">
+        <div class="col-md-10 offset-md-1" >
 
-            <form id="food">
+            <form id="food" style="margin-right: 70px; padding: 10px;">
 
-                <label for="food-input">Find food</label>
+                <div for="food-input" style="font-family: 'Lobster', cursive; font-size: 30px; color: whitesmoke;  -webkit-text-stroke: 1.5px black; ">Find a Recipe!</div>
 
 
                 <input type="text" id="food-input"><br>
 
-                <input id="submit" type="submit" value="GO!">
+                <input style="margin: 10px;"id="submit" type="submit" value="GO!">
             </form>
         </div>
     </div>

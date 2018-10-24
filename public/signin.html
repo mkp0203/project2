@@ -27,21 +27,24 @@
             <div class="col-md-12 centered clearfix">
                 <div class="signin " style="max-width: 440px;margin: 0 auto;">
                     <div class="signin-heading centered">
-                        <h4 class="c-slate lineHeight-l fontSize-l fontWeight-5 textAlign-center breakPointS-fontSize-xl">Welcome
+                        <h4 class="c-slate lineHeight-l fontSize-l fontWeight-5 textAlign-center breakPointS-fontSize-xl text-white">Welcome
                             back!<br /></h4>
                     </div>
                     <div class="marginBottom-l textAlign-center">
-                        <span class="fontSize-m">
-                            Sign in here:
-                        </span>
+
                     </div>
                 </div>
                 <div class="wrap">
                     <p class="form-title">
                         Sign In</p>
                     <form class="login">
-                        <input type="text" placeholder="Username" />
-                        <input type="password" placeholder="Password" />
+                        <div class="form-group">
+                            <input type="text text-white" name="email" class="form-control my-input text-white" id="email"
+                                placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control my-input text-white" id="password" placeholder="Password">
+                        </div>
                         <input type="submit" value="Sign In" class="btn btn-success btn-sm" />
                         <div class="remember-forgot">
                             <div class="row">
@@ -54,7 +57,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6 forgot-pass-content">
-                                    <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
+                                    <a href="./register.html" class="register">Or Sign Up!</a>
                                 </div>
                             </div>
                         </div>

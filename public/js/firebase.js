@@ -65,9 +65,11 @@ $(document).ready(function () {
                 fat: fat,
                 carbs: carbs
             };
+
             database.ref().push(meal);
 
         });
+
 
         $("#foodName").val("");
         $("#calories").val("");

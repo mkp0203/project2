@@ -12,9 +12,22 @@ $(document).ready(function () {
     firebase.initializeApp(config);
     var database = firebase.database();
 
-    var count = 1;
+    var dailyCal = 2000;
+    var dailyPro = 125;
+    var dailyFat = 56;
+    var dailyCar = 250;
+    var calRem = 2000;
+    var proRem = 125;
+    var fatRem = 56;
+    var carRem = 250;
+
+    $("#calGoal").text("Calories: " + dailyCal);
+    $("#proGoal").text("Protein: " + dailyPro + "g");
+    $("#fatGoal").text("Fat: " + dailyFat + "g");
+    $("#carGoal").text("Carbs: " + dailyCar + "g");
 
     // On Submit
+    var count = 1;
     $("#submit").on("click", function (event) {
 
         event.preventDefault();
@@ -24,12 +37,27 @@ $(document).ready(function () {
 
         $(".food").each(function () {
 
+            // Assigns all values from all inputs on all dynamic rows to variables
             var food = $(this).find(".col1").val().trim();
             var calories = $(this).find(".col2").val().trim();
             var protein = $(this).find(".col3").val().trim();
             var fat = $(this).find(".col4").val().trim();
             var carbs = $(this).find(".col5").val().trim();
 
+            // Displays new remaining values
+            calRem = calRem - calories;
+            proRem = proRem - protein;
+            fatRem = fatRem - fat;
+            carRem = carRem - carbs;
+            $("#calRem").text("Calories: " + calRem);
+            $("#proRem").text("Protein: " + proRem + "g");
+            $("#fatRem").text("Fat: " + fatRem + "g");
+            $("#carRem").text("Carbs: " + carRem + "g");
+
+            // Appends all variables to the ID 'meals'
+            $("#meals").append("<tr class='row text-center'><td class='col-sm-3'>" + food + "</td><td class='col-sm-2'>" + calories + "</td><td class='col-sm-2'>" + protein + "</td><td class='col-sm-2'>" + fat + "</td><td class='col-sm-2'>" + carbs + "</td><br>");
+
+            // Sets structure and pushes to Firebase
             var meal = {
                 food: food,
                 calories: calories,
@@ -37,10 +65,7 @@ $(document).ready(function () {
                 fat: fat,
                 carbs: carbs
             };
-
             database.ref().push(meal);
-
-            $("#meals").append("<tr class='row text-center'><td class='col-sm-3'>" + food + "</td><td class='col-sm-2'>" + calories + "</td><td class='col-sm-2'>" + protein + "</td><td class='col-sm-2'>" + fat + "</td><td class='col-sm-2'>" + carbs + "</td><br>");
 
         });
 
@@ -54,18 +79,6 @@ $(document).ready(function () {
         $(".dynamicRow").remove();
 
     });
-
-    // database.ref().on("child_added", function (childSnapshot) {
-
-    //     var name = childSnapshot.val().name;
-    //     var dest = childSnapshot.val().dest;
-    //     var fTrain = childSnapshot.val().fTrain;
-    //     var freq = childSnapshot.val().freq;
-    //     var freq = childSnapshot.val().freq;
-
-    //     $("#table > tbody").prepend("<tr><td>" + name + "</td><td>" + dest + "</td><td>" + freq + "</td><td>" + nextTrain + "</td><td>" + minsToTrain + "</td></tr>");
-
-    // });
 
     // Add Row Button
     var counter = 1;

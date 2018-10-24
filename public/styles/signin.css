@@ -1,4 +1,4 @@
-/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+
 /**
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
@@ -319,6 +319,11 @@ a {
     /* 1 */
     font: inherit;
     /* 2 */ }
+
+  #name, #email, #password {
+    color: white !important; 
+    /* background-color: transparent; */
+  }
   
   html, body {
     font-family: 'Open Sans','Helvetica', sans-serif;
@@ -800,7 +805,7 @@ a {
           width: 100%;
           margin: 0;
           padding: 5px 10px;
-          background: 0;
+          /* background: 0; */
           border: 0;
           border-bottom: 1px solid #FFFFFF;
           outline: 0;

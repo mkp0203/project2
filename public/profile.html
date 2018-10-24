@@ -27,13 +27,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./profile.html">My Profile</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./index.html">Tracker
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./profile.html">Profile</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./foodapi.html">Recipes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./signin.html">Sign-Out</a>
@@ -59,7 +62,7 @@
             <div class="col-lg-7 offset-lg-1">
                 <div class="col-lg-12" id="infobar">
 
-                    NAME
+
                     <br>
                     <br>
                     <!-- Nav tabs -->
@@ -74,7 +77,7 @@
                             <a class="nav-link" data-toggle="tab" href="#photos" role="tab">Photos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#related" role="tab">Recipes</a>
+                            <a class="nav-link" data-toggle="tab" href="#recipe" role="tab">Recipes</a>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -83,14 +86,13 @@
                                 <table class="table table-borderless" id="tableU">
                                     <tbody>
                                         <tr>
-                                            <td>Date of Birth:</td>
+                                            <td>DOB:</td>
                                             <!-- append birthdate here -->
-                                            <td>??</td>
+                                            <td>October 10, 1991</td>
                                         </tr>
                                         <tr>
                                             <td>Where are you from?</td>
-                                            <!-- add dynamically -->
-                                            <td></td>
+                                            <td>Charlotte, NC</td>
                                         </tr>
                                         <tr>
                                             <td>Email:</td>
@@ -98,7 +100,14 @@
                                         </tr>
                                         <tr>
                                             <td>Bio:</td>
-                                            <td>My bio~</td>
+                                            <td>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce
+                                                kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus
+                                                winter purslane kale. Celery potato scallion desert raisin horseradish
+                                                spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo
+                                                shoot green bean swiss chard seakale pumpkin onion chickpea gram corn
+                                                pea. Brussels sprout coriander water chestnut gourd swiss chard wakame
+                                                kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts
+                                                nori azuki bean chickweed potato bell pepper artichoke.</td>
                                         </tr>
                                         <tr>
                                             <td>Social Media:</td>
@@ -106,7 +115,7 @@
                                         </tr>
                                         <tr>
                                             <td>Goals:</td>
-                                            <td></td>
+                                            <td>To stick to a Paleo lifestyle.</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -115,9 +124,52 @@
                             <!-- tab-pane -->
                         </div>
                         <div class="tab-pane" id="food-logs" role="tabpanel">
-                            <div class="list-group">
-                                <p>add photofood logs</p>
-                            </div>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h5>Grilled Chicken</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Cal:</td>
+                                    <td> 130</td>
+                                </tr>
+                                <tr>
+                                    <td>Protein:</td>
+                                    <td>25g</td>
+                                </tr>
+                                <tr>
+                                    <td>Carbs: </td>
+                                    <td>0g</td>
+                                </tr>
+                                <tr>
+                                    <td>Fat: </td>
+                                    <td>3g</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h5 style="margin-top: 15px;">Roasted sweet potato</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Cal:</td>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <td>Protein:</td>
+                                    <td>1g</td>
+                                </tr>
+                                <tr>
+                                    <td>Fat:</td>
+                                    <td>1g</td>
+                                </tr>
+                                <tr>
+                                    <td>Carbs:</td>
+                                    <td>13g</td>
+                                </tr>
+
+                            </table>
+
                         </div>
                         <div class="tab-pane" id="photos" role="tabpanel">
                             <div class="container" id="gallery">
@@ -198,10 +250,11 @@
 
                                     </div>
                                 </div>
-
-
-
-
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="recipe" role="tabpanel">
+                            <div class="list-group">
+                                <p>Get Started Logging Your Favorite Recipes!</p>
                             </div>
                         </div>
 

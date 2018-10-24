@@ -12,6 +12,22 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/profile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/profile.html"));
+  });
+
+  app.get("/register", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/register.html"));
+  });
+
+  // blog route loads blog.html
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/signin.html"));
+  });
+
+
+
+
   // Load example page and pass in an example by id
   app.get("/user/:id", function(req, res) {
     db.User.findOne({ where: { id: req.params.id } }).then(function(fitness_db) {

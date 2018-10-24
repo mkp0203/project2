@@ -16,37 +16,33 @@ $(document).ready(function () {
 
     // On Submit
     $("#submit").on("click", function (event) {
-        // console.log("yo");
+
         event.preventDefault();
-        // alert("test");
 
         var $header = $("<h5 class='text-left' style='font-weight: bold;'>Meal " + count++ + "</h5>");
         $("#meals").append($header);
 
-        var food = $("#foodName").val().trim();
-        var calories = $("#calories").val().trim();
-        var protein = $("#protein").val().trim();
-        var fat = $("#fat").val().trim();
-        var carbs = $("#carbs").val().trim();
+        $(".food").each(function () {
 
-        var dynamic = $(".dynamic").val().trim();
+            var food = $(this).find(".col1").val().trim();
+            var calories = $(this).find(".col2").val().trim();
+            var protein = $(this).find(".col3").val().trim();
+            var fat = $(this).find(".col4").val().trim();
+            var carbs = $(this).find(".col5").val().trim();
 
-        var firstRow = {
-            food: food,
-            calories: calories,
-            protein: protein,
-            fat: fat,
-            carbs: carbs
-        };
+            var meal = {
+                food: food,
+                calories: calories,
+                protein: protein,
+                fat: fat,
+                carbs: carbs
+            };
 
-        var dynamicRows = {
-            dynamic: dynamic
-        };
+            database.ref().push(meal);
 
-        database.ref().push(firstRow);
-        database.ref().push(dynamicRows);
+            $("#meals").append("<tr class='row text-center'><td class='col-sm-3'>" + food + "</td><td class='col-sm-2'>" + calories + "</td><td class='col-sm-2'>" + protein + "</td><td class='col-sm-2'>" + fat + "</td><td class='col-sm-2'>" + carbs + "</td><br>");
 
-        $("#meals").append("<tr class='row text-center'><td class='col-sm-3'>" + food + "</td><td class='col-sm-2'>" + calories + "</td><td class='col-sm-2'>" + protein + "</td><td class='col-sm-2'>" + fat + "</td><td class='col-sm-2'>" + carbs + "</td><br>");
+        });
 
         $("#foodName").val("");
         $("#calories").val("");
@@ -71,22 +67,21 @@ $(document).ready(function () {
 
     // });
 
+    // Add Row Button
     var counter = 1;
-
     $("#addRow").on("click", function () {
         var newRow = $("<tr>");
-        newRow.addClass("row dynamicRow");
-        console.log(newRow);
+        newRow.addClass("row dynamicRow food");
 
         var cols = "";
-        cols += '<td class="col-sm-3"><input type="text" class="form-control dynamic" id="foodName' + counter + '"/></td>';
-        cols += '<td class="col-sm-2"><input type="text" class="form-control dynamic" id="calories' + counter + '"/></td>';
-        cols += '<td class="col-sm-2"><input type="text" class="form-control dynamic" id="protein' + counter + '"/></td>';
-        cols += '<td class="col-sm-2"><input type="text" class="form-control dynamic" id="fat' + counter + '"/></td>';
-        cols += '<td class="col-sm-2"><input type="text" class="form-control dynamic" id="carbs' + counter + '"/></td>';
+        cols += '<td class="col-sm-3"><input type="text" class="form-control col1 dynamic" id="foodName' + counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control col2 dynamic" id="calories' + counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control col3 dynamic" id="protein' + counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control col4 dynamic" id="fat' + counter + '"/></td>';
+        cols += '<td class="col-sm-2"><input type="text" class="form-control col5 dynamic" id="carbs' + counter + '"/></td>';
         cols += '<td class="col-sm-1 dynamic"><span id="clickFA"><i class="ibtnDel fas fa-trash-alt fa-2x trash"></span></td>';
-        newRow.append(cols);
 
+        newRow.append(cols);
         $("#inputTable").append(newRow);
         counter++;
     });

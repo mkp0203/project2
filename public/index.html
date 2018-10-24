@@ -22,6 +22,7 @@
 
 <body>
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html" id="brand"><i class="fas fa-cookie-bite"></i> BiteTracker</a>
@@ -55,18 +56,18 @@
             <div class="card col-sm-12" id="goalCard">
                 <div class="card-body">
                     <ul id="dailyGoal">
-                        <li class="col-sm-3">Your Daily Goal:</li>
-                        <li class="col-sm-2">Calories: 2000</li>
-                        <li class="col-sm-2">Protein: 100g</li>
-                        <li class="col-sm-2">Fat: 75g</li>
-                        <li class="col-sm-2">Carbs: 200g</li>
+                        <li class="col-sm-3">Your Daily Goals:</li>
+                        <li class="col-sm-2" id="calGoal"></li>
+                        <li class="col-sm-2" id="proGoal"></li>
+                        <li class="col-sm-2" id="fatGoal"></li>
+                        <li class="col-sm-2" id="carGoal"></li>
                     </ul>
                     <ul id="remaining">
                         <li class="col-sm-3">Remaining:</li>
-                        <li class="col-sm-2">Calories: 1500</li>
-                        <li class="col-sm-2">Protein: 50g</li>
-                        <li class="col-sm-2">Fat: 20g</li>
-                        <li class="col-sm-2">Carbs: 50g</li>
+                        <li class="col-sm-2" id="calRem">Calories: 2000</li>
+                        <li class="col-sm-2" id="proRem">Protein: 125g</li>
+                        <li class="col-sm-2" id="fatRem">Fat: 56g</li>
+                        <li class="col-sm-2" id="carRem">Carbs: 250g</li>
                     </ul>
                 </div>
             </div>

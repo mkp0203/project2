@@ -70,5 +70,5 @@ $(document).ready(function () {
 
 function clearLink() {
     $("#food-div").empty();
-    $("#food-input").val(" ");
+    // $("#food-input").val(" ");
 }
